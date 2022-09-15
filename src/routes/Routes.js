@@ -6,13 +6,22 @@ import Login from "../pages/authentication/Login";
 import ForgotPassword from "../pages/authentication/ForgotPassword";
 import PrivateRoute from "../pages/authentication/PrivateRoute";
 import UpdateProfile from "../pages/authentication/UpdateProfile";
+import Dashboard from "../pages/google-drive/Dashboard";
 
 export default function RoutesComponent() {
   return (
     <Router>
       <Routes>
         {/* Drive */}
-
+        <Route
+          exact
+          path="/"
+          element={
+            <PrivateRoute>
+              <Dashboard />
+            </PrivateRoute>
+          }
+        />
         {/* Profile */}
         <Route
           path="/user"

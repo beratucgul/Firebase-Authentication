@@ -1,7 +1,15 @@
-import React from 'react'
+import React from "react";
+import Navbar from "./Navbar";
+import { Container } from "react-bootstrap";
+import AddFolderButton from "./AddFolderButton";
 
 export default function Dashboard() {
   return (
-    <div>Dashboard</div>
-  )
+    <>
+      <Navbar />
+      <Container fluid>
+        <AddFolderButton />
+      </Container>
+    </>
+  );
 }
