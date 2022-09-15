@@ -1,22 +1,24 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Signup from "../pages/Signup";
-import Dashboard from "../pages/Dashboard";
-import Login from "../pages/Login";
-import ForgotPassword from "../pages/ForgotPassword";
-import PrivateRoute from "../pages/PrivateRoute";
-import UpdateProfile from "../pages/UpdateProfile";
+import Signup from "../pages/authentication/Signup";
+import Profile from "../pages/Profile";
+import Login from "../pages/authentication/Login";
+import ForgotPassword from "../pages/authentication/ForgotPassword";
+import PrivateRoute from "../pages/authentication/PrivateRoute";
+import UpdateProfile from "../pages/authentication/UpdateProfile";
 
 export default function RoutesComponent() {
   return (
     <Router>
       <Routes>
+        {/* Drive */}
+
+        {/* Profile */}
         <Route
-          exact
-          path="/"
+          path="/user"
           element={
             <PrivateRoute>
-              <Dashboard />
+              <Profile />
             </PrivateRoute>
           }
         />
@@ -29,7 +31,7 @@ export default function RoutesComponent() {
             </PrivateRoute>
           }
         />
-        
+        {/* Auth */}
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
