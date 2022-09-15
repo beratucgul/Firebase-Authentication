@@ -5,6 +5,7 @@ import Dashboard from "../pages/Dashboard";
 import Login from "../pages/Login";
 import ForgotPassword from "../pages/ForgotPassword";
 import PrivateRoute from "../pages/PrivateRoute";
+import UpdateProfile from "../pages/UpdateProfile";
 
 export default function RoutesComponent() {
   return (
@@ -19,6 +20,16 @@ export default function RoutesComponent() {
             </PrivateRoute>
           }
         />
+        <Route
+          exact
+          path="/update-profile"
+          element={
+            <PrivateRoute>
+              <UpdateProfile />
+            </PrivateRoute>
+          }
+        />
+        
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
