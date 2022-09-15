@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import { Routes } from "react-router-dom";
 import RoutesComponent from "../routes/Routes";
+import { AuthProvider } from "../context/AuthContext";
 
 function App() {
   return (
@@ -10,7 +10,9 @@ function App() {
       style={{ minHeight: "100vh" }}
     >
       <div className="w-100" style={{ maxWidth: "400px" }}>
-        <RoutesComponent />
+        <AuthProvider>
+          <RoutesComponent />
+        </AuthProvider>
       </div>
     </Container>
   );
