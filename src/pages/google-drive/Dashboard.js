@@ -36,20 +36,20 @@ export default function Dashboard() {
             ))}
           </div>
         )}
-        {childFolders.length > 0 && childFiles.length > 0 && <hr />}
+         {childFolders.length > 0 && childFiles.length > 0 && <hr />}
         {childFiles.length > 0 && (
           <div className="d-flex flex-wrap">
-            {childFolders.map((childFile) => (
+            {childFiles.map((childFile) => (
               <div
                 key={childFile.id}
                 style={{ maxWidth: "250px" }}
                 className="p-2"
               >
-                <File folder={childFile} />
+                <File file={childFile} />
               </div>
             ))}
           </div>
-        )}
+        )} 
       </Container>
     </>
   );

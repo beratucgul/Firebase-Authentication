@@ -1,7 +1,7 @@
 import React from "react";
 import { Breadcrumb } from "react-bootstrap";
 import { ROOT_FOLDER } from "../hooks/useFolder";
-import { Link as link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function FolderBreadcrumbs({ currentFolder }) {
   let path = currentFolder === ROOT_FOLDER ? [] : [ROOT_FOLDER];
@@ -15,7 +15,7 @@ export default function FolderBreadcrumbs({ currentFolder }) {
       {path.map((folder, index) => (
         <Breadcrumb.Item
           key={folder.id}
-          linkAs={link}
+          linkAs={Link}
           linkProps={{
             to: {
               pathname: folder.id ? `/folder/${folder.id}` : "/",
